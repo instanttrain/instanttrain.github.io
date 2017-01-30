@@ -1,61 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" href="http://tayloreruysal.me/favicon.png">
-<title>
-Taylor Eruysal
-</title>
-<link rel = "stylesheet" type="text/css" href="style.css">
+    <link href="http://tayloreruysal.me/favicon.png" rel="shortcut icon">
+    <title>Taylor Eruysal</title><!--main background sheet-->
+    <link href="mainstyle.css" rel="stylesheet" type="text/css">
+    <link href="animationstyle.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani|Roboto" rel=
+    "stylesheet">
+    <!--link rel = "stylesheet" type="text/css" href="style.css"-->
 </head>
 <body>
-<!-- ==================================Page Header=================================== -->
-<div id="header">
-<h1 align=left>Taylor Eruysal</h1>
+    <!-- ==================================Page Header=================================== -->
+    <hr>
+    <div id="header">
+        <h1 align="left">Taylor Eruysal</h1>
+    </div>
 
-</div>
+<!-- ==================================Navigation Bar================================ -->
 
-<!-- ==================================Navigation Bar---============================= -->
 <div id="nav">
-<p align=center>
-<a class="HOME" href = "about.html">About</a>
-&nbsp;
-<a href = "art.html">Art</a>
-&nbsp;
-<a href = "games.html">Games</a>
-&nbsp;
-<a href = "animations.html">Animations</a>
-&nbsp;
-<a href = "music.html">Music</a>
-&nbsp;
-<a href = "resume.html">R&#233;sum&#233;</a>
-&nbsp;
-<a href = "contact.html">Contact</a>
+<p align=left>
+
+<div="wrapper">
+<a class="HOME first after" href = "about.html">ABOUT</a>
+</div="wrapper">
+&nbsp; | &nbsp;
+
+<div="wrapper">
+<a class ="first after" href = "art.html">ART</a>
+&nbsp; | &nbsp;
+
+<div="wrapper">
+<a class ="first after" href = "games.html">GAMES</a>
+</div="wrapper">
+&nbsp; | &nbsp;
+
+<div="wrapper">
+<a class ="first after onpage" href = "animations.html">ANIMATIONS</a>
+</div="wrapper">
+
+&nbsp; | &nbsp;
+
+<div="wrapper">
+<a class ="first after" href = "music.html">MUSIC</a>
+</div="wrapper">
+
+
+
 </p>
 </div>
+<hr></hr>
+
 <!-- ==================================Information Box=============================== -->
 <div id="content">
-<h2>Animations</h2>
-<p>Most of my animations are done in Autodesk Maya, although I have experimented with other programs, such as Houdini. All the footage shown here was created with models I rigged and skinned myself. Higher quality renders will be available soon.</p>
+<div id= "contentbar"><h2>Animations</h2></div>
+<p>I've animated characters and short films for games and 3D classes alike. I primarily work with Autodesk Maya, and have also animated for both the Unity and Unreal engines. The vast majority of my animation work is done with models and rigs I made myself.</p>
 
-<div style="margin: 0px auto; text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/cUuEG4tMjAc" frameborder="0" allowfullscreen></iframe></div> <!-- Lob -->
-<div style="margin: 0px auto; text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/fYfWsl2qgtY" frameborder="0" allowfullscreen></iframe></div> <!-- Movement -->
-<div style="margin: 0px auto; text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/lElB9gRwULA" frameborder="0" allowfullscreen></iframe></div> <!-- Thought -->
-<div style="margin: 0px auto; text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/YRgGE45j1RQ" frameborder="0" allowfullscreen></iframe></div> <!-- Houdini -->
+    <div id = "acontainer">
 
-<br>
-<br>
+        <div style="margin: 0px auto; text-align: center;">
+            <iframe id="lob" width="500" height="281" src="https://www.youtube.com/embed/cUuEG4tMjAc" frameborder="0" allowfullscreen></iframe><!-- Lob -->
+            <iframe id="tough" width="500" height="281" text-align="right" src="https://www.youtube.com/embed/fYfWsl2qgtY" frameborder="0" allowfullscreen></iframe>
+        </div> <!-- Movement -->
+        <div style="margin: 0px auto; text-align: center;">
+            <iframe id="shelf" width="500" height="281" src="https://www.youtube.com/embed/lElB9gRwULA" frameborder="0" allowfullscreen></iframe> <!-- Thought -->
+            <iframe id="destruction" width="500" height="281" text-align= "right" src="https://www.youtube.com/embed/YRgGE45j1RQ" frameborder="0" allowfullscreen></iframe>
+        </div> <!-- Houdini -->
+
+    </div>
 
 </div>
 <!--===================================Footer=========================================-->
-<div id="footer">
-<br>
-&copy;
-<script type="text/javascript">
-document.write((new Date()).getFullYear());
-</script>
-Taylor Eruysal.
-<a href="https://www.rpi.edu">Rensselaer Polytechnic Institute</a>
-
-</div>
+ <div id="footer">
+    <div class = "wrap">
+        <br>
+        &copy; 
+        <script type="text/javascript">
+        document.write((new Date()).getFullYear());
+        </script> Taylor Eruysal. <a href="https://www.rpi.edu">Rensselaer
+        Polytechnic Institute</a>
+        </div>
+    </div>
 </body>
+</html>
 </html>

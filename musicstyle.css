@@ -1,0 +1,58 @@
+
+#contentbar {
+	background-color: #b0c2d6;
+	width: 100%;
+	height: 50px;
+	position: relative;
+	text-align: center;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	color: #7887a6;
+    font-family: 'Rajdhani',sans-serif;
+    font-size: 20px;
+}
+
+h2{
+	padding-top: 5px;
+}
+
+#horizons {
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+.button{
+	border: solid;
+	border-width: 3px;
+	border-color: #7887a6;
+	padding: 10px;
+	 font-family: 'Rajdhani',sans-serif;
+    font-size: 15px;
+    text-align: center;
+    display: inline;
+
+
+}
+
+#buttoncontainer{
+	text-align: center;
+	margin-top: 100px;
+}
+
+#one{
+	width: 100px;
+
+}
+
+#two{
+	width: 200px;
+}
+
+#three {
+	width: 100px;
+}
+
+#four {
+	width: 300px;
+}
+
