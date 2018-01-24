@@ -54,7 +54,7 @@ h3, p {
 }
 
 .onpage {
-    color: #7887a6 !important;
+    color: #133b56 !important;
     font-weight: 700;
 }
 
@@ -72,7 +72,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-    color: #7887a6;
+    color: #133b56;
     text-decoration: none;
 }
 
@@ -88,12 +88,12 @@ a,a:hover,a:active {
     position: relative;
     transition: .5s color ease;
     text-decoration: none;
-    color: #7887a6;
+    color: #133b56;
 /*change*/
 }
 
 a:hover {
-    color: #7887a6;
+    color: #133b56;
 /*change color!!!*/
 }
 
@@ -117,7 +117,7 @@ a.before:before,a.after:after {
     height: 3px;
     height: 3px;
     width: 0;
-    background: #7887a6;
+    background: #133b56;
 /*change the color of the underline*/
 }
 
