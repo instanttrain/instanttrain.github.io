@@ -1,0 +1,44 @@
+.u-section-1 {
+  background-image: none;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 100px;
+}
+
+.u-section-1 .u-text-1 {
+  font-family: "Noto Sans";
+  font-weight: 700;
+  margin: 24px auto 24px 0;
+}.u-section-2 .u-sheet-1 {
+  min-height: 1421px;
+}
+
+.u-section-2 .u-text-1 {
+  font-family: "Noto Sans";
+  font-weight: normal;
+  margin: 41px auto 0 0;
+}
+
+.u-section-2 .u-text-2 {
+  font-family: "Noto Sans";
+  font-size: 1.25rem;
+  margin: 40px 11px 41px 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-2 .u-text-2 {
+    margin-right: 0;
+  }
+}.u-section-3 .u-sheet-1 {
+  min-height: 127px;
+}
+
+.u-section-3 .u-btn-1 {
+  border-style: none;
+  background-image: none;
+  font-family: "Noto Sans";
+  font-size: 1.25rem;
+  margin: 40px auto;
+  padding: 7px 182px 9px 180px;
+}
