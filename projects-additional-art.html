@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset = "UTF-8">
+		<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
+		<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+		<link rel = "stylesheet" href = "styles.css">
+		<link rel="icon" type="image/png" href="/files/favicon.png">
+		<title> Additional Art </title>
+	</head>
+
+	<body>
+		<!-- <ul> is for unordered HTML lists. --!>
+		<ul class = "navbar">
+			<li> <a href = "index.html"> Home </a> </li>
+			<li> <a href = "projects.html"> Projects </a> </li>
+			<li> <a href = "blog-index.html"> Blog </a> </li>
+			<li> <a href = "files/resume_eruysal.pdf"> Resume </a> </li>
+			<li> <a href = "mailto:tayloreruysal@gmail.com"> Contact </a> </li>
+		</ul>
+	
+		<div class = "section-content">
+			<p>
+				Click the arrows to scroll through the gallery.
+			</p>
+		
+			<!-- Slideshow container -->
+			<div class="slideshow-container">
+
+				<!-- Full-width images with number and caption text -->
+				<div class="mySlides fade">
+					<img src="files/art-mountains.png" style="width:100%">
+				</div>
+
+				<div class="mySlides fade">
+					<img src="files/art-factory.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-kintsu.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-bedroom.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-hallway.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-birds.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-blacksmith.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-harbor.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-spacearmor.png" style="width:100%">
+				</div>
+				
+				<div class="mySlides fade">
+					<img src="files/art-turret.png" style="width:100%">
+				</div>
+
+				<!-- Next and previous buttons -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			</br>
+
+			<!-- The dots/circles -->
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+				<span class="dot" onclick="currentSlide(4)"></span>
+				<span class="dot" onclick="currentSlide(5)"></span>
+				<span class="dot" onclick="currentSlide(6)"></span>
+				<span class="dot" onclick="currentSlide(7)"></span>
+				<span class="dot" onclick="currentSlide(8)"></span>
+				<span class="dot" onclick="currentSlide(9)"></span>
+				<span class="dot" onclick="currentSlide(10)"></span>
+			</div>
+		</div>
+		
+		<footer>
+			<p>
+				&copy; 
+				<script type="text/javascript">
+					document.write((new Date()).getFullYear());
+				</script> Taylor Eruysal
+			</p>
+		</footer>
+	
+	<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex-1].style.display = "block";
+			dots[slideIndex-1].className += " active";
+		} 
+	</script>
+	
+	</body>
+</html>
