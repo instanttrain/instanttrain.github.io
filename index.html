@@ -4,50 +4,124 @@
 		<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
 		<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
 		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-		<link rel = "stylesheet" href = "style.css">
+		<link rel = "stylesheet" href = "../style.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+		<link rel="manifest" href="../site.webmanifest">
 		<title> Welcome! </title>
 	</head>
 
 	<body>
-		<div class = "header">
-			<h2> Taylor Eruysal </h2>
-		</div>
+		<header class = "header">
+			<!-- Left Image -->
+			<div class = "header-side left">
+				<a href = "../index.html" >
+					<img src = "../images/logo.png" alt = "Logo" style = "max-height: 80px;" >
+				</a>
+			</div>
+
+			<!-- Center Links -->
+			<nav class = "header-nav">
+				<a class = "text" href = "../index.html"> Home </a>
+				<a class = "text" href = "../projects.html"> Projects </a>
+				<a class = "text" href = "ba.html"> Blog </a>
+				<a class = "text" href = "../resume_eruysal.pdf"> Resume </a>
+			</nav>
+
+			<!-- Right Image -->
+			<div class = "header-side right">
+				<a href = "https://bsky.app/profile/instanttrain.bsky.social">
+					<img src = "../images/button_bluesky.png" alt = "Bluesky" style = "max-height: 40px;" >
+				</a>
+				<a href = "mailto:tayloreruysal@gmail.com">
+					<img src = "../images/button_email.png" alt = "Email" style = "max-height: 40px;" >
+				</a>
+			</div>
+		</header>
 
 		<div class = "row">
 			<div class = "left-column">
 				<div class = "card">
-					<h1 class = "text-header"> TITLE HEADING </h1>
-					<h4 class = "text-secondaryheader"> Copy this for post header subtitles. </h4>
-					<div class = "fakeimg" style = "height:200px;"> Image </div>
-					<a href = "blog/b1.html"> Blog </a>
+					<h1 class = "text-header"> Mechanical Analysis: Sailing (Mario & Luigi: Brothership) </h1>
+						<h4 class = "text-secondaryheader"> November 14, 2024 </h4>
+						<img class = "image" src = "b2-1.jpg" alt = "A screenshot of Mario and Luigi running along a ridge." >
+						
+						<p class = "text"> I was very pleased to see the <i>Mario & Luigi</i> series return for the first time on a non-handheld console. While some elements of <i>Brothership</i> were positive (good music, gorgeous battle animations, and a skilled transfer of the traditional art style into 3D), I ended up with more complaints than I expected. My largest complaint, unfortunately, was one of the main new mechanical additions to <i>Brothership</i>: the act of sailing the ocean to discover new locations and collect items that boost the player's abilities. </p>
+						
+						<p class = "text-quotebubble"> "Since the base is an island, it drifts along the ocean rather than being steered at will. So, it didn't feel quite right for it to be a real ship. I think that once it became an island shaped like a ship, its appeal really grew." - <a href = "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-15-mario-and-luigi-brothership-part-2/">Akira Otani </a> </p>
+						
+						<br> <!-- Line break. -->
+						
+						<p class = "text"> <i>(Author's note: It's entirely possible that some of the issues and complaints I've brought up here may have been improved upon or patched out in updates to the game. I haven't had the time to revisit it since taking my notes for this article.)</i> </p>
+						
+						<br> <!-- Line break. -->
+						<hr> <!-- Horizontal line. -->
+						<br> <!-- Line break. -->
+					
+					<h2 class = "text-header"> Developer Intent </h2>
+					
+						<img class = "image-center" style = "width: 80%;" src = "b2-2.jpg" alt = "The sailing map in Brothership." >
+					
+						<p class = "text"> <i>Brothership</i> simplifies sailing into a "rail system," with loops (displayed in different colors) of ocean current serving as track for Shipshape Island (the game's hub) to travel between. Shipshape moves in one direction and is unable to stop completely, always moving with either a "fast" or "slow" speed. The ocean is divided into sections, each with its own islands (explorable areas), islets (smaller one-room puzzles or battle arenas), and reefs (landmarks that double as one-time collectibles). </p>
+						
+						<p class = "text"> Given: </p>
+						
+						<p class = "text-quotebubble"> 1. The ocean map is always visible while the player moves in the overworld.
+						<br>
+						2. Sailing is (mostly) performed in real-time and continues, even if the player has physically left Shipshape.
+						</p>
+						
+						<p class = "text">  </p>
+						
+						<p class = "text"> The intent is clear - to create a back-and-forth rhythm where the player sets a destination, then spends the "sailing time" exploring other areas and completing sidequests. Presumably, this was intended to simulate the passing of time and making the size of the adventure feel larger as a result. If the player were to miss the destination, the ship would continually loop the rail, allowing them to get off at the intended destination on the next pass. </p>
+						
+						<br> <!-- Line break. -->
+						<hr> <!-- Horizontal line. -->
+						<br> <!-- Line break. -->
+					
+					<h2 class = "text-header"> Friction </h2>
+					
+						<img class = "image-center" style = "width: 80%;" src = "b2-3.jpg" alt = "The player selects a new rail of ocean current." >
+					
+						<p class = "text"> If the player wishes to clear the "fog of war" and fill in all the rail colors on their map, they will need to sail Shipshape on every rail of current, but also use every entrance and exit which connects the rails to one another. There is no easy way to automate this, as the navigational system always exits a rail on the nearest exit. The only way, then, to ensure a specific exit is to sit on the Ocean Map, waiting for Shipshape to be between two exits, then select another rail in such a way where the navigational system favors it. </p>
+					
+						<p class = "text"> While this is happening, the game emits a warning chime when Shipshape nears a yet-to-be-discovered-by-the-player landmass. This sometimes creates an issue where the active rail of current is asymmetrical or "stepped," as many are. As Shipshape moves up-and-to-the-side of each "step," it moves in and out of the range to activate the chime. The result is a Shipshape constantly slowing down and beeping at the player as they are trying to accomplish other tasks. (Nearing an undiscovered landmass also automatically disables the "fast" sailing speed, requiring the player to turn it back on manually each of the 62 times it is disabled in a 100% playthrough). </p>
+						
+						<img class = "image-center" style = "width: 80%;" src = "b2-4.jpg" alt = "Mario and Luigi identify an island." >
+						
+						<p class = "text"> The simple solution is to identify the landmass with your cannon telescope, but this creates a problem of adding a name and color to the island/islet on the map, which blends it in with all the others you have visited thus far, making it far more difficult for a completionist to remember which they have already explored, or which sections of the ocean they are currently in have progressed. As best I can tell, there is currently no sort of checklist beyond the default Ocean Map for the player to keep track of these sorts of things ingame. </p>
+						
+						<p class = "text"> Another issue is that Shipshape's sailing does not progress while Mario and Luigi are in battle or on islets, specifically. Thus, while players are exploring, they will find themselves in a five or ten minute battle, only to check their map afterward and see that Shipshape has only inched forward. (Again, the player can turn on faster sailing, but it is manually switched off as Shipshape nears any undiscovered landmass.) </p>
+						
+						<br> <!-- Line break. -->
+						<hr> <!-- Horizontal line. -->
+						<br> <!-- Line break. -->
+					
+					<h2 class = "text-header"> Conclusion </h2>
+					
+						<img class = "image-center" style = "width: 90%;" src = "b2-5.jpg" alt = "Concept art for Shipshape Island." >
+					
+						<p class = "text"> The end result is a gameplay loop where the player feels mentally discouraged to double back, constantly pressured to be dragged away by the collar from both of its two activities, yet never landing in a convenient time to do either thoroughly. In my fourth section of ocean (towards the end of the game), three minutes of sailing was required to return to the earliest section to backtrack - no skips, no shortcuts. (Granted it was never mandatory to return to the early islands to progress the story, but why ought there not be a way to more conveniently return if the player simply... liked them and wanted to play around in them again?) </p>
+						
+						<p class = "text"> Real-time management has never been a crucial skill in the Mario & Luigi series, and I'm not sure why it was added here. There was very little intentional design to "Mario-ify" these ideas or align them harmoniously with the standard Mario & Luigi elements of play. </p>
+
+						<p class = "text-quotebubble"> "I thought drifting islands sounded fun. You discover an island, have an adventure, befriend the people there... I thought it would be fun to connect more and more islands together and increase the number of allies you could go on an adventure with." - <a href = "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-15-mario-and-luigi-brothership-part-3/"> Haruyuki Ohashi </a> </p>
 				</div>
-			<div class = "card">
-				<h2> TITLE HEADING </h2>
-				<h5> Title description, Sep 2, 2017 </h5>
-				<div class = "fakeimg" style = "height:200px;"> Image </div>
-				<p> Some text. </p>
 			</div>
-		</div>
+			
 			<div class = "right-column">
 				<div class = "card">
-				<h2> About Me </h2>
-				<div class = "fakeimg" style = "height:100px;"> Image </div>
-				<p> Some text about me in culpa qui officia deserunt mollit anim.. </p>
-			</div>
-			<div class = "card">
-				<h3> Popular Post </h3>
-				<div class = "fakeimg"> Image </div><br>
-				<div class = "fakeimg"> Image </div><br>
-				<div class = "fakeimg"> Image </div>
-			</div>
-			<div class = "card">
-				<h3> Follow Me </h3>
-				<p> Some text. </p>
-			</div>
+					<h2 class = "text-header"> Navigation </h2>
+					<br> <!-- Line break. -->
+					<a class = "text" href = "ba.html"> Blog Archive </a>
+				</div>
 			</div>
 		</div>
 
 		<div class = "footer">
-			<h2> Footer </h2>
+			<p class = "text" style = "color: White; text-align: center;">
+				&copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script>
+			<p>
 		</div>
 	</body>
