@@ -4,11 +4,11 @@
 		<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
 		<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
 		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-		<link rel = "stylesheet" href = "../style.css">
-		<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-		<link rel="manifest" href="../site.webmanifest">
+		<link rel = "stylesheet" href = "/style.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 		<title> Mechanical Critique: Sailing (Mario & Luigi: Brothership) </title>
 	</head>
 
@@ -16,26 +16,26 @@
 		<header class = "header">
 			<!-- Left Image -->
 			<div class = "header-side left">
-				<a href = "index.html" >
-					<img src = "images/logo.png" alt = "Logo" style = "max-height: 80px;" >
+				<a href = "/index.html" >
+					<img src = "/images/logo.png" alt = "Logo" style = "max-height: 80px;" >
 				</a>
 			</div>
 
 			<!-- Center Links -->
 			<nav class = "header-nav">
-				<a class = "text" href = "index.html"> Home </a>
-				<a class = "text" href = "projects.html"> Projects </a>
-				<a class = "text" href = "blog/archive.html"> Blog </a>
-				<a class = "text" href = "resume_eruysal.pdf"> Resume </a>
+				<a class = "text" href = "/index.html"> Home </a>
+				<a class = "text" href = "/projects.html"> Projects </a>
+				<a class = "text" href = "/blog/archive.html"> Blog </a>
+				<a class = "text" href = "/resume_eruysal.pdf"> Resume </a>
 			</nav>
 
 			<!-- Right Image -->
 			<div class = "header-side right">
 				<a href = "https://bsky.app/profile/instanttrain.bsky.social">
-					<img src = "images/button_bluesky.png" alt = "Bluesky" style = "max-height: 40px;" >
+					<img src = "/images/button_bluesky.png" alt = "Bluesky" style = "max-height: 40px;" >
 				</a>
 				<a href = "mailto:tayloreruysal@gmail.com">
-					<img src = "images/button_email.png" alt = "Email" style = "max-height: 40px;" >
+					<img src = "/images/button_email.png" alt = "Email" style = "max-height: 40px;" >
 				</a>
 			</div>
 		</header>
@@ -45,7 +45,7 @@
 				<div class = "card">
 					<h1 class = "text-header"> Mechanical Analysis: Sailing (Mario & Luigi: Brothership) </h1>
 						<h4 class = "text-secondaryheader"> November 14, 2024 </h4>
-						<img class = "image" src = "files/b2-1.jpg" alt = "A screenshot of Mario and Luigi running along a ridge." >
+						<img class = "image" src = "/blog/files/b2-1.jpg" alt = "A screenshot of Mario and Luigi running along a ridge." >
 						
 						<p class = "text"> I was pleased to see the <i>Mario & Luigi</i> series make the jump to non-handheld consoles with its newest title, <i>Brothership</i>. While I enjoyed some aspects of the game (charming music, gorgeous battle animations, and a skilled transfer of the traditional art style into 3D), I found myself becoming frustrated with one of its main mechanics: the act of sailing the ocean to discover new locations and collect items that boost the player's abilities. </p>
 						
@@ -63,7 +63,7 @@
 					
 					<h2 class = "text-header"> Developer Intent </h2>
 					
-						<img class = "image-center" style = "width: 80%;" src = "files/b2-2.jpg" alt = "The sailing map in Brothership." >
+						<img class = "image-center" style = "width: 80%;" src = "/blog/files/b2-2.jpg" alt = "The sailing map in Brothership." >
 					
 						<p class = "text"> <i>Brothership</i> simplifies sailing into a "rail system," with loops (displayed in different colors) of ocean current serving as "track" for Shipshape Island, the game's hub, to travel between. Shipshape moves in one direction and is unable to stop completely, always moving with either a "fast" or "slow" speed. The ocean is divided into sections, each with its own islands (explorable areas), islets (smaller one-room puzzles or battle arenas), and reefs (landmarks that double as one-time collectibles). </p>
 						
@@ -84,13 +84,13 @@
 					
 					<h2 class = "text-header"> Friction </h2>
 					
-						<img class = "image-center" style = "width: 80%;" src = "files/b2-3.jpg" alt = "The player selects a new rail of ocean current." >
+						<img class = "image-center" style = "width: 80%;" src = "/blog/files/b2-3.jpg" alt = "The player selects a new rail of ocean current." >
 					
 						<p class = "text"> If the player wishes to clear the "fog of war" which covers the map and fill in all the rail colors, they will need to sail Shipshape on every rail of current, and also use every entrance and exit which connects rails to one another. There is no easy way to automate this, as the navigational system always favors exiting a rail via the next upcoming exit. The only way, then, to ensure a specific exit is to sit on the Ocean Map, waiting for Shipshape to be between two exits, then select another rail in such a way where the navigational system favors it. </p>
 					
 						<p class = "text"> While this is happening, the game emits a warning chime when Shipshape nears a yet-to-be-discovered-by-the-player landmass. This sometimes creates an issue where the active rail of current is asymmetrical or "stepped," as the rails only use 90° turns instead of curves. As Shipshape moves up-and-to-the-side of each "step," it moves in and out of the range to activate the chime. The result is a Shipshape constantly slowing down and beeping at the player as they are trying to focus on other tasks. Nearing an undiscovered landmass also automatically disables the "fast" sailing speed, requiring the player to turn it back on manually each of the 62 times it will be disabled in a 100% playthrough. </p>
 						
-						<img class = "image-center" style = "width: 80%;" src = "files/b2-4.jpg" alt = "Mario and Luigi identify an island." >
+						<img class = "image-center" style = "width: 80%;" src = "/blog/files/b2-4.jpg" alt = "Mario and Luigi identify an island." >
 						
 						<p class = "text"> The simple solution is to identify the landmass with your cannon telescope, but this creates a problem of adding a name and color to the island/islet on the map, which blends it in with all the others you have visited thus far, making it far more difficult for a completionist to remember which they have already explored, or which sections of the ocean they are currently in have progressed. As best I can tell, there is currently no sort of checklist or marking system in the Ocean Map for the player to keep track of these sorts of things ingame. </p>
 						
@@ -102,7 +102,7 @@
 					
 					<h2 class = "text-header"> Conclusion </h2>
 					
-						<img class = "image-center" style = "width: 90%;" src = "files/b2-5.jpg" alt = "Concept art for Shipshape Island." >
+						<img class = "image-center" style = "width: 90%;" src = "/blog/files/b2-5.jpg" alt = "Concept art for Shipshape Island." >
 					
 						<p class = "text"> The end result is a gameplay loop where the player feels mentally discouraged to double back, constantly pressured to be dragged away by the collar from both of its two activities, yet never landing in a convenient time to do either thoroughly. In my fourth section of ocean (towards the end of the game), three minutes of sailing was required to return to the earliest section to backtrack - no skips, no shortcuts. Granted, it was never mandatory to return to the early islands to progress the story, but why ought there not be a way to more conveniently return if the player simply... liked them and wanted to play around in them again? </p>
 						
@@ -112,7 +112,7 @@
 						
 						<!-- "Return to Blog" button. -->
 						<div style = "position: relative; padding: 50px;"> 
-							<a class = "button-return" href = "archive.html"> Back to Blog </a>
+							<a class = "button-return" href = "/blog/archive.html"> Back to Blog </a>
 						</div>
 				</div>
 			</div>
