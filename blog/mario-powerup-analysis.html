@@ -17,7 +17,7 @@
 			<!-- Left Image -->
 			<div class = "header-side left">
 				<a href = "index.html" >
-					<img src = "images/logo.png" alt = "Logo" style = "max-height: 80px;" >
+					<img src = "../images/logo.png" alt = "Logo" style = "max-height: 80px;" >
 				</a>
 			</div>
 
@@ -190,12 +190,6 @@
 		</div>
 		
 		<script>
-			fetch('/header.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('header-container').innerHTML = data;
-			});
-			
 			fetch('/sidebar.html')
 			.then(response => response.text())
 			.then(data => {
