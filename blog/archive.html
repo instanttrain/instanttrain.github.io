@@ -14,30 +14,7 @@
 
 	<body>
 		<header class = "header">
-			<!-- Left Image -->
-			<div class = "header-side left">
-				<a href = "../index.html" >
-					<img src = "../images/logo.png" alt = "Logo" style = "max-height: 80px;" >
-				</a>
-			</div>
-
-			<!-- Center Links -->
-			<nav class = "header-nav">
-				<a class = "text" href = "../index.html"> Home </a>
-				<a class = "text" href = "../projects.html"> Projects </a>
-				<a class = "text" href = "archive.html"> Blog </a>
-				<a class = "text" href = "../resume_eruysal.pdf"> Resume </a>
-			</nav>
-
-			<!-- Right Image -->
-			<div class = "header-side right">
-				<a href = "https://bsky.app/profile/instanttrain.bsky.social">
-					<img src = "../images/button_bluesky.png" alt = "Bluesky" style = "max-height: 40px;" >
-				</a>
-				<a href = "mailto:tayloreruysal@gmail.com">
-					<img src = "../images/button_email.png" alt = "Email" style = "max-height: 40px;" >
-				</a>
-			</div>
+			<div id="header-container"></div>
 		</header>
 
 		<div class = "row">
@@ -67,9 +44,7 @@
 			
 			<div class = "right-column">
 				<div class = "card">
-					<h2 class = "text-header"> Navigation </h2>
-					<br> <!-- Line break. -->
-					<a class = "text" href = "archive.html"> Blog Archive </a>
+					<div id="sidebar-container"></div>
 				</div>
 			</div>
 		</div>
@@ -79,4 +54,18 @@
 				&copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script>
 			<p>
 		</div>
+		
+		<script>
+			fetch('/header.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('header-container').innerHTML = data;
+			});
+			
+			fetch('/sidebar.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('sidebar-container').innerHTML = data;
+			});
+		</script>
 	</body>
