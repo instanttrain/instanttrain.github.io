@@ -44,7 +44,7 @@
 			<div class = "left-column">
 				<div class = "card">
 					<h2 class = "text-header" > Welcome! </h2>
-						<p class = "text" > I'm Taylor: game designer, artist, and web creator. You'll find a selection of my work here, along with . </p>
+						<p class = "text" > I'm Taylor: a game designer, artist, and web creator. I keep a selection of my work on this site, along with a blog and links to other things I've made. </p>
 						<br> <!-- Line break. --!>
 						
 					<h2 class = "text-header" > My design philosophy </h2>
@@ -60,7 +60,11 @@
 			
 			<div class = "right-column">
 				<div class = "card">
-					<img class = "image-center" src = "images/self-image.jpg" alt = "A photo of myself." >
+					<img class = "image-center" src = "images/self-image.jpg" alt = "A photo of myself." style = "width: 80%" >
+				</div>
+				
+				<div class = "card">
+					<div id="sidebar-container"></div>
 				</div>
 			</div>
 		</div>
@@ -70,4 +74,12 @@
 				&copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script>
 			<p>
 		</div>
+		
+		<script>
+			fetch('/sidebar.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('sidebar-container').innerHTML = data;
+			});
+		</script>
 	</body>
