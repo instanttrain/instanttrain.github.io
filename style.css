@@ -14,8 +14,8 @@ body {
 
 .header {
 	background-color: White;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	display: flex; /* Put all the header sections in a horizontal row. */
 	align-items: center; /* Vertically center all sections. */
 	justify-content: space-between; /* Place left and right elements at absolute edge of the container. */
