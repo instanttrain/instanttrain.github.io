@@ -1,82 +1,53 @@
 <!DOCTYPE html>
-	<head>
-		<meta charset = "UTF-8">
-		<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
-		<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
-		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-		<link rel = "stylesheet" href = "/style.css">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<title> Blog Archive </title>
-	</head>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
+	<meta name = "author" content = "Taylor Eruysal">
 
-	<body>
-		<header class = "header">
-			<!-- Left Image -->
-			<div class = "header-side left" >
-				<a href = "/index.html" >
-					<img src = "/images/logo.png" alt = "Logo" target = "top" style = "max-height: 60px;" >
-				</a>
-			</div>
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 
-			<!-- Center Links -->
-			<nav class = "header-nav">
-				<a class = "text" href = "/index.html"> Home </a>
-				<a class = "text" href = "/projects.html"> Projects </a>
-				<a class = "text" href = "/blog/archive.html"> Blog </a>
-				<a class = "text" href = "/resume_eruysal.pdf"> Resume </a>
-			</nav>
+	<!-- style and title -->
+	<link rel = "stylesheet" href = "/style.css">
+	<title> Blog Archive </title>
+</head>
 
-			<!-- Right Image -->
-			<div class = "header-side right">
-				<a href = "https://bsky.app/profile/instanttrain.bsky.social">
-					<img src = "/images/button_bluesky.png" alt = "Bluesky" style = "max-height: 40px;" >
-				</a>
-				<a href = "mailto:tayloreruysal@gmail.com">
-					<img src = "/images/button_email.png" alt = "Email" style = "max-height: 40px;" >
-				</a>
-			</div>
-		</header>
+<body>
+	<div class = "section header">
+		<a href = "/index.html"> 
+			<img class = "logo" src = "files/logo.png" alt = "Logo">
+		</a>
 
-		<div class = "row">
-			<div class = "left-column" style = "width: 100%;">
-				<div class = "card">
-					<h2 class = "text-header"> Blog Archive </h2>
-					<br> <!-- Line break. -->
-					
-					<a class = "text" href = "/blog/mario-powerup-analysis.html"> Living vs. Surviving: An Analysis of the Super Mario Powerup System </a>
-					<h4 class = "text-secondaryheader"> July 21, 2025 </h4>
-					<a class = "text" href = "/blog/brothership-sailing-analysis.html"> Mechanical Analysis: Sailing (Mario & Luigi: Brothership) </a>
-					<h4 class = "text-secondaryheader"> November 14, 2024 </h4>
-					
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-					<br> <!-- Line break. -->
-				</div>
+		<div class = "links">
+			<a href = "/about.html"> About </a>
+			<a href = "/projects.html"> Projects </a>
+			<a href = "/blog/archive.html"> Blog </a>
+			<a href = "/resume_eruysal.pdf"> Resume </a>
+		</div>
+	</div>
+
+	<div class="section content">
+		<div class = "section card">
+			<div class = "withincard">
+				<h2> Blog Archive </h2>
+					<a href = "/blog/mario-powerup-analysis.html"> Living vs. Surviving: An Analysis of the Super Mario Powerup System </a>
+						<p class = "subtitle">July 21, 2025</p>
+
+					<a href = "/blog/brothership-sailing-analysis.html"> Mechanical Analysis: Sailing (Mario & Luigi: Brothership) </a>
+						<p class = "subtitle">November 14, 2024</p>
 			</div>
 		</div>
-
-		<div class = "footer">
-			<p class = "text" style = "color: White; text-align: center;">
-				&copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script>
-			<p>
-		</div>
-		
-		<script>
-			fetch('/sidebar.html')
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById('sidebar-container').innerHTML = data;
-			});
-		</script>
-	</body>
+	</div>
+	
+	<div class = "section footer">
+		<p> &copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script> </p>
+	</div>
+</body>
+</html>

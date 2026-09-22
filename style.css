@@ -1,186 +1,205 @@
 /* Import the Google Fonts font used for this site. */
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+/* Sizing reminder: em is relative to the font size of its parent element. */
+/* rem is relative to the font size of the root <html> element. */
+html {
+	font-family: "PT Serif", serif;
+	font-size: 1.2em;
+	color: Black;
 }
 
 body {
+	font-size:1rem;
 	background-color: SlateGray;
-	/* background-image: url("bg.jpg") */
+	line-height:1.5;
+	margin: 0; /* Remove the auto-margin around all the page-elements. */
 }
 
-.header {
-	background-color: White;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	display: flex; /* Put all the header sections in a horizontal row. */
-	align-items: center; /* Vertically center all sections. */
-	justify-content: space-between; /* Place left and right elements at absolute edge of the container. */
-	box-shadow: 5px 5px 5px rgb(0 0 0 / 20%);
-	/* width: 100%; */
-	/* box-sizing: border-box; */
+p {
+    line-height:2;
 }
 
-/* Apply 10% padding (or spacing) to the left and right containers */
-.header-side.left {
-	padding-left: 15%;
-}
-
-.header-side.right {
-	padding-right: 15%;
-	/* Delete the following lines to stop the right side of the header from being a horizontal row of multiple items. */
-	display: flex;
-	gap: 10px; /* Adjust space between the four links. */
-}
-
-/* Ensure images don't overflow and scale nicely */
-.header-side img {
-	display: block;
-	max-height: 30px; /* Adjust height as needed */
-	width: auto;
-}
-
-/* Center the navigation links */
-.header-nav {
-	display: flex;
-	gap: 30px; /* Adjust space between the four links. */
-}
-
-/* Reminder: "a" designates hyperlinks in HTML. */
-/* These are the unclicked links in the header. */
-.header-nav a {
-	/* font-size: 22px; */
-	text-decoration: none;
-	color: #253352;
-	font-family: Verdana;
-	font-weight: bold;
-}
-
-.header-nav a:hover {
-	color: CornflowerBlue; /* Optional hover effect */
-}
-
-.row {
-	padding-top: 3%;
-	padding-left: 15%;
-	padding-right: 15%;
-}
-
-/* Create two unequal columns that float next to one another. */
-.left-column {
-	float: left;
-	width: 75%;
-}
-
-.right-column {
-	float: left;
-	width: 25%;
-	padding-left: 20px;
-}
-
-/* Fake image */
-.fakeimg {
-	background-color: Gainsboro;
-	width: 100%;
-	padding: 20px;
-}
-
-/* Add a card effect for articles */
-.card {
-	border-radius: 25px;
-	background-color: White;
-	padding: 30px;
-	margin-top: 20px;
-	box-shadow: 5px 5px 5px rgb(0 0 0 / 20%);
-}
-
-/* Clear floats after the columns */
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-/* Footer */
-.footer {
-	padding: 30px;
-	background-color: #2C3741;
-	margin-top: 20px;
-}
-
-.button-return {
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	position: absolute;
-	font-family: Verdana;
-	font-size: 20px;
-	font-weight: bold;
-	padding: 20px;
-	border-style: solid;
-	border-radius: 10px;
-	line-height: 1.4;
-	color: Black;
-	background-color: Tan;
-}
-
-/* This is for the text that titles posts. */
-.text-header {
-	color: #253352;
-	font-family: Verdana;
-	font-weight: bold;
-	padding-bottom: 10px;
-}
-
-/* This is for the text below the title of a post: "September 10, 2020" or whatever. */
-.text-secondaryheader {
-	color: Gray;
-	font-family: Verdana;
-	padding-bottom: 10px;
-}
-
-.text-quotebubble {
-	font-family: "PT Serif", serif;
-	font-style: italic;
-	font-size: 20px;
-	padding: 20px;
-	border-radius: 10px;
-	color: SaddleBrown;
-	background-color: AntiqueWhite;
-	line-height: 1.4;
-}
-
-/* This is for standard, in-bubble text. */
-.text {
-	font-family: "PT Serif", serif;
-	font-size: 20px;
-	padding-bottom: 10px;
-	line-height: 1.4;
-}
-
-.image {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	width: 100%;
-}
-
-.image-center {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	width: 100%;
+.blogreturnbutton {
 	display: block;
 	margin-left: auto;
-	margin-right: auto;"
+	margin-right: auto;
+	padding: 1em;
+	font-size: 1em;
 }
 
-/* When the screen is less than 800 px wide, make the content columns stack ON TOP instead of NEXT to each other. */
+.subtitle {
+	font-size:.8em;
+	text-indent: 1em;
+	color: Gray;
+}
+
+.quotebubble {
+	font-style: italic;
+	padding: 1em;
+	border-radius: 0.5em;
+	color: SaddleBrown;
+	background-color: AntiqueWhite;
+}
+
+@media print {
+    html{ font-size:.8em; }
+    body{ line-height:1.2; }
+	.subtitle{ font-size:.6em; line-height:1.2; }
+}
+
+h1, h2, h3, h3, h5, h6{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    font-weight:bold;
+    color:#0989b2;
+    text-decoration:underline;
+    text-decoration-color:#0989b2;
+    text-decoration-thickness:.1rem;
+}
+
+a:visited {
+    color:#054a61;
+    text-decoration-color:#054a61;
+}
+
+li {
+    margin-top:.5em;
+    margin-bottom:.5em;
+}
+
+/* Reminder: CSS elements can be combined via a space in HTML, which shows as a period in CSS. */
+.section {
+	padding-left:calc((100% - 800px)/2 + 1rem);
+	padding-right:calc((100% - 800px)/2 + 1rem);
+}
+
 @media screen and (max-width: 800px) {
-	.leftcolumn, .rightcolumn {
-		width: 100%;
-		padding: 0;
+    .section {
+		padding-right:1rem;
+		padding-left:1rem;
 	}
+}
+
+.section.header {
+	display: flex;
+	flex-direction: row;
+	background-color: White;
+	box-shadow: 0.5em 0.5em 0.5em rgb(0 0 0 / 20%);
+	color: Black;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+/* Align the header vertically centered. */
+.section.header> * {
+    display:flex;
+	align-items:center;
+}
+
+.logo {
+	max-width: 8em;
+}
+
+.section.header .links {
+    flex-grow:0;
+	/* Center the links on the header horizontally. */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Spacing commands will transform the space between each link. */
+.section.header .links a {
+    color:Black;
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0;
+	text-decoration:none;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}
+
+.section.header .links a:hover {
+	color: darkgray;
+}
+
+@media screen and (max-width: 376px) {
+    .section.header .links a:nth-child(2) {
+		display:none
+	}
+}
+
+/* This is the white rounded rectangle card laid on top of the colored background. */
+.section.card {
+	border-radius: 1em;
+	background-color: White;
+	padding: 0.5em;
+	margin-top: 1em;
+	box-shadow: 0.5em 0.5em 0.5em rgb(0 0 0 / 20%);
+	
+}
+
+/* This is for text INSIDE the cards. */
+.section.content .section.card .withincard {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+.section.footer {
+	background-color: #2C3741;
+	color: White;
+	text-align:center;
+	padding-top:1rem;
+	padding-bottom:1rem;
+	margin-top:1rem;
+}
+
+@media only print {
+	.section.header {
+		display:none;
+	}
+
+	.section.footer {
+		display:none;
+	}
+}
+
+code {
+    font-family:"Inconsolata",monospace
+}
+
+/* This is all for data tables. */
+table {
+	width:100%;
+	border-spacing:0;
+	border:3px solid Black;
+	border-radius:.5rem;
+}
+
+tr:nth-child(even) {
+	background-color:Black;
+	color:White;
+}
+
+th,td {
+	padding:.25rem .5rem;
+}
+
+th:empty {
+	display:none;
+}
+
+blockquote {
+    border-left:.5rem solid Black;
+    padding-left:.5rem;
+}
+
+/* This is for images. */
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
