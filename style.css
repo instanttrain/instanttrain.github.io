@@ -113,11 +113,16 @@ code {
 	align-items:center;
 }
 
-.logo {
-	max-width: 8em;
+.logo-desktop {
+	height: 3em;
 }
 
-.section.header .links {
+.logo-mobile {
+	display: none;
+	height: 3em;
+}
+
+.section.header .menu-desktop {
     flex-grow:0;
 	/* Center the links on the header horizontally. */
 	margin-left: auto;
@@ -125,22 +130,35 @@ code {
 }
 
 /* Spacing commands will transform the space between each link. */
-.section.header .links a {
+.section.header .menu-desktop a {
     color:Black;
 	font-family: Arial, Helvetica, sans-serif;
-	padding:0;
 	text-decoration:none;
 	margin-right: 0.5em;
 	margin-left: 0.5em;
 }
 
-.section.header .links a:hover {
+.section.header .menu-desktop a:hover {
 	color: darkgray;
 }
 
 @media screen and (max-width: 376px) {
-    .section.header .links a:nth-child(2) {
-		display:none
+	.logo-desktop {
+		display: none;
+	}
+
+	.logo-mobile {
+		display: block;
+		max-width: 3em;
+	}
+
+	.section.header .menu-desktop a {
+		font-size: 0.8em;
+	}
+
+	.section.header .menu-desktop a {
+		margin-right: 0.25em;
+		margin-left: 0.25em;
 	}
 }
 /* END HEADER */
