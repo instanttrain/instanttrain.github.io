@@ -98,6 +98,7 @@ code {
 /* HEADER */
 .section.header {
 	display: flex;
+	overflow: hidden;
 	flex-direction: row;
 	background-color: White;
 	box-shadow: 0.5em 0.5em 0.5em rgb(0 0 0 / 20%);
