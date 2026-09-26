@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
+	<meta name = "author" content = "Taylor Eruysal">
+
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/files/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/files/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/files/favicon-16x16.png">
+	<link rel="manifest" href="/files/site.webmanifest">
+
+	<!-- style and title -->
+	<link rel = "stylesheet" href = "/style.css">
+	<title> RPI Visualizations </title>
+</head>
+
+<body>
+	<div class = "section header">
+		<a href = "/index.html"> 
+			<img class = "logo" src = "/files/logo.png" alt = "Logo">
+		</a>
+
+		<div class = "links">
+			<a href = "/about.html"> About </a>
+			<a href = "/projects.html"> Projects </a>
+			<a href = "/art.html"> Art </a>
+			<a href = "/blog.html"> Blog </a>
+			<a href = "/resume_eruysal.pdf"> Resume </a>
+		</div>
+	</div>
+
+	<div class="section content">
+		<div class = "section card">
+			<div class = "withincard">
+				<h2>RPI Visualizations</h2>
+
+				<div class = "slideshow-container">
+					<div class = "slide active">
+						<img src = "/projects/files/rpi-vis-1.jpg">
+					</div>
+
+					<div class = "slide">
+						<img src = "/projects/files/rpi-vis-2.jpg">
+					</div>
+
+					<button class = "slideshow-button prev" onclick = "changeSlide(-1)">&#10094;</button>
+					<button class = "slideshow-button next" onclick = "changeSlide(1)">&#10095;</button>
+				</div>
+
+				<p> I was hired in 2019 by <a href = "https://scholar.google.com/citations?user=RWOKBb8AAAAJ&hl=en">Dr. Runye Zha</a> to create 3D representations of cellular interactions to be used in presentations / business proposals for Rensselaer Polytechnic Institute's <a href = "https://cbe.rpi.edu/">Department of Chemical and Biological Engineering</a>.</p>
+
+				<p> Making renders that were both appealing yet informative was a fun challenge. I ended up putting a lot of thought into things like color choices to try to contextualize the abstract concept of it all. I'd love to tackle this kind of work again someday, now that I have more sophisticated render engines available. </p>
+
+				<form action = "/projects.html">
+					<button class = "returnbutton" type = "submit"> Back to Projects </button>
+				</form>
+			</div>
+		</div>
+	
+	<div class = "section footer">
+		<p> &copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script> </p>
+	</div>
+</body>
+<script>
+	let currentSlideIndex = 0;
+	const slides = document.querySelectorAll('.slide');
+
+	function showSlide(index) {
+		// Handle wrapping around boundaries
+		if (index >= slides.length) {
+			currentSlideIndex = 0;
+		} else if (index < 0) {
+			currentSlideIndex = slides.length - 1;
+		} else {
+			currentSlideIndex = index;
+		}
+
+		// Remove active class from all slides
+		slides.forEach(slide => slide.classList.remove('active'));
+
+		// Add active class to the current slide
+		slides[currentSlideIndex].classList.add('active');
+	}
+
+	function changeSlide(n) {
+		showSlide(currentSlideIndex + n);
+	}
+
+	// Optional: Auto-play slideshow every 4 seconds
+	setInterval(() => {
+		changeSlide(1);
+	}, 5000);
+</script>
+</html>

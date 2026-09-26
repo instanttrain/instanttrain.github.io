@@ -20,7 +20,8 @@ p {
     line-height:2;
 }
 
-.blogreturnbutton {
+/* BUTTON */
+.returnbutton {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -28,6 +29,7 @@ p {
 	font-size: 1em;
 }
 
+/* TEXT */
 .subtitle {
 	font-size:.8em;
 	text-indent: 1em;
@@ -70,6 +72,16 @@ li {
     margin-bottom:.5em;
 }
 
+blockquote {
+    border-left:.5rem solid Black;
+    padding-left:.5rem;
+}
+
+code {
+    font-family:"Inconsolata",monospace
+}
+/* END TEXT */
+
 /* Reminder: CSS elements can be combined via a space in HTML, which shows as a period in CSS. */
 .section {
 	padding-left:calc((100% - 800px)/2 + 1rem);
@@ -83,6 +95,7 @@ li {
 	}
 }
 
+/* HEADER */
 .section.header {
 	display: flex;
 	flex-direction: row;
@@ -129,15 +142,15 @@ li {
 		display:none
 	}
 }
+/* END HEADER */
 
-/* This is the white rounded rectangle card laid on top of the colored background. */
+/* CARD */
 .section.card {
 	border-radius: 1em;
 	background-color: White;
 	padding: 0.5em;
 	margin-top: 1em;
 	box-shadow: 0.5em 0.5em 0.5em rgb(0 0 0 / 20%);
-	
 }
 
 /* This is for text INSIDE the cards. */
@@ -145,6 +158,7 @@ li {
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 }
+/* END CARD */
 
 .section.footer {
 	background-color: #2C3741;
@@ -165,11 +179,7 @@ li {
 	}
 }
 
-code {
-    font-family:"Inconsolata",monospace
-}
-
-/* This is all for data tables. */
+/* DATA TABLES */
 table {
 	width:100%;
 	border-spacing:0;
@@ -189,11 +199,7 @@ th,td {
 th:empty {
 	display:none;
 }
-
-blockquote {
-    border-left:.5rem solid Black;
-    padding-left:.5rem;
-}
+/* END TABLES */
 
 /* This is for images. */
 img {
@@ -203,3 +209,182 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/* PROJECT GALLERY */
+.responsive {
+	box-sizing: border-box;
+	padding: 0.25em;
+	float: left;
+	width: 50%;
+}
+
+/* Wide screens show three images in a row, medium shoes two, small shows one. */
+@media only screen and (max-width: 700px) {
+	.responsive{
+		width: 50%;
+		margin: 0.25em 0;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.responsive{
+		width: 100%;
+	}
+}
+
+.gallery-entry {
+	box-shadow: 0.25em 0.25em 0.25em rgb(0 0 0 / 20%);
+	border: solid White;
+}
+
+.gallery-container {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.gallery-container img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease;
+}
+
+.gallery-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Semi-transparant dark background. */
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	color: White;
+
+	/* Start hidden, transition smoothly */
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.gallery-container:hover .gallery-overlay {
+	/* Fade the overlay in while hovering over the container */
+	opacity: 1;
+}
+/* END PROJECT GALLERY */
+
+/* IMAGE SLIDESHOW */
+.slideshow-container {
+	position: relative;
+	max-height: 350px; /* Required to have a dimension in at least one axis. */
+	aspect-ratio: 16/9;
+	margin: auto;
+	overflow: hidden;
+}
+
+/* Position all slides in the exact same spot (stacked) */
+.slide {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.8s ease-in-out;
+}
+
+/* The active slide is visible and sits on top */
+.slide.active {
+	opacity: 1;
+	z-index: 2;
+}
+
+.slide img {
+	object-fit: cover;
+}
+
+/* Styled external buttons */
+.slideshow-button {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 10%; /* Covers the left/right edges of the image */
+	background-color: transparent;
+	border: none;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 3em;
+	font-weight: bold;
+	opacity: 0.5; /* Semi-transparent arrow text */
+	transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.slideshow-button:hover {
+	background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+	opacity: 1;
+}
+
+.prev {
+	left: 0;
+}
+
+.next {
+	right: 0;
+}
+/* END IMAGE SLIDESHOW */
+
+/* ART LIGHTBOX */
+.lightbox {
+	display: none; /* Hidden by default */
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
+	justify-content: center;
+	align-items: center;
+}
+
+/* Focused Image */
+.lightbox img {
+	max-width: 90%;
+	max-height: 90%;
+	border-radius: 4px;
+}
+
+.liquid-gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Forces exactly two equal columns */
+	gap: 1em;
+	width: 100%;
+}
+
+/* Switches to 1 column on screens smaller than 600px (like smartphones) */
+@media (max-width: 600px) {
+	.liquid-gallery {
+		grid-template-columns: 1fr;
+	}
+}
+
+.liquid-gallery img {
+	width: 100%;
+	height: auto;
+	display: block;
+	box-shadow: 0.25em 0.25em 0.25em rgb(0 0 0 / 20%);
+	cursor: pointer; /* Changes mouse pointer to a hand */
+	/* This is defined before the hover to ensure that the border's appearance doesn't displace nearby images. */
+	border: 0.25rem solid transparent; /* Invisible border prevents layout jump */
+	transition: border-color 0.2s ease, transform 0.2s ease; /* Smooth transition effect */
+}
+
+.liquid-gallery img:hover {
+	border-color: #ffffff; /* Changes the border to white (or use an accent color like #3498db) */
+	transform: scale(1.02); /* Adds a subtle zoom effect */
+}
+
+/* END ART LIGHTBOX */

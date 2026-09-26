@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
+	<meta name = "author" content = "Taylor Eruysal">
+
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/files/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/files/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/files/favicon-16x16.png">
+	<link rel="manifest" href="/files/site.webmanifest">
+
+	<!-- style and title -->
+	<link rel = "stylesheet" href = "/style.css">
+	<title> Additional Art </title>
+</head>
+
+<body>
+	<div class = "section header">
+		<a href = "/index.html"> 
+			<img class = "logo" src = "/files/logo.png" alt = "Logo">
+		</a>
+
+		<div class = "links">
+			<a href = "/about.html"> About </a>
+			<a href = "/projects.html"> Projects </a>
+			<a href = "/art.html"> Art </a>
+			<a href = "/blog.html"> Blog </a>
+			<a href = "/resume_eruysal.pdf"> Resume </a>
+		</div>
+	</div>
+
+	<div class="section content">
+		<div class = "section card">
+			<div class = "withincard">
+				<div style = "text-align: center;">(Click the images to view.)</div>
+
+				<h2 style = "line-height:1;">3D Art</h2>
+
+				<div class = "liquid-gallery">
+					<img src = "/art/mountains.jpg" alt = "Mountains">
+					<img src = "/art/factory.jpg" alt = "Factory">
+					<img src = "/art/spaceship-eight.jpg" alt = "Spaceship Eight">
+					<img src = "/art/bedroom.jpg" alt = "Bedroom">
+					<img src = "/art/harbor.jpg" alt = "Harbor Assets">
+					<img src = "/art/kintsu.jpg" alt = "Kintsukuroi">
+					<img src = "/art/hallway.jpg" alt = "Hallway">
+					<img src = "/art/turret.jpg" alt = "Turret">
+				</div>
+
+				<div style = "clear: both;"></div>
+				<h2>2D Art</h2>
+
+				<div class = "liquid-gallery">
+					<img src = "/art/blacksmith.jpg" alt = "Blacksmith">
+					<img src = "/art/spacearmor.jpg" alt = "Space Armor">
+					<img src = "/art/flute.jpg" alt = "flute">
+					<img src = "/art/birds.jpg" alt = "Birds">
+					<img src = "/art/hallway.jpg" alt = "Hallway">
+					<img src = "/art/horse.jpg" alt = "Horse">
+				</div>
+
+				<div style = "clear: both;"></div>
+				<h2>Fan Art</h2>
+
+				<div class = "liquid-gallery">
+					<img src = "/art/mina.jpg" alt = "Mina the Hollower (fanart)">
+					<img src = "/art/mario-redraw.jpg" alt = "Mario (Redraw)">
+				</div>
+				
+				<!-- Lightbox Overlay -->
+				<div id="lightbox" class="lightbox">
+					<img id="lightbox-img" src="" alt="Enlarged view">
+				</div>
+
+				<br> <!-- Line break. -->
+			</div>
+		</div>
+	</div>
+
+	<div class = "section footer">
+		<p> &copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script> </p>
+	</div>
+</body>
+<script>
+	const galleryImages = document.querySelectorAll('.liquid-gallery img');
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImg = document.getElementById('lightbox-img');
+
+	// Open lightbox when an image is clicked
+	galleryImages.forEach(img => {
+		img.addEventListener('click', () => {
+			lightbox.style.display = 'flex';
+			lightboxImg.src = img.src;
+		});
+	});
+
+	// Close lightbox when clicking anywhere outside the image
+	lightbox.addEventListener('click', (e) => {
+		if (e.target !== lightboxImg) {
+			lightbox.style.display = 'none';
+		}
+	});
+</script>
+</html>
