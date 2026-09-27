@@ -80,6 +80,18 @@ blockquote {
 code {
     font-family:"Inconsolata",monospace
 }
+
+audio {
+	width: 100%;
+}
+
+/* Extra adjustments for very small screens */
+@media (max-width: 380px) {
+  audio {
+    width: 70%;
+  }
+}
+
 /* END TEXT */
 
 /* Reminder: CSS elements can be combined via a space in HTML, which shows as a period in CSS. */
