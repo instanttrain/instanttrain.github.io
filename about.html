@@ -16,7 +16,7 @@
 
 	<!-- style and title -->
 	<link rel = "stylesheet" href = "/style.css">
-	<title> Welcome! </title>
+	<title> About </title>
 </head>
 
 <body>
@@ -24,11 +24,55 @@
 
 	<main>
 		<div class = "card">
-			<h2> Welcome! </h2>
+			<h2> About Me </h2>
 
-			<p> If I did things right, this should say "about." </p>
+				<p> I'm Taylor. I attended <a href = "https://www.rpi.edu/">RPI</a> as a Simulation Arts and Sciences major with an Electronic Arts concentration. </p>
 
-			<a href = "/"> Back to Home </a>
+				<p> I'm currently working as an independent game developer, but I've also worked with organizations like the <a href = "https://www.bostonfig.com/"> Boston Festival for Independent Games</a>, as well as other clients such as Youtube channels, charities, and developers. </p>
+			
+			<h2> What I do <span style = "color: LimeGreen";>✔</span> </h2>
+
+				<table style = "width: 100%; overflow: hidden;">
+					<tr style = "color: Goldenrod;">
+						<th> <h3> Game Design </h3> </th>
+						<th> <h3> Art </h3> </th>
+						<th> <h3> Web Creation </h3> </th>
+					</tr>
+					<tr>
+						<td> Mechanical<br>Design</td>
+						<td> 2D/3D </td>
+						<td> Video Editing </td>
+					</tr>
+					<tr>
+						<td> Level/Map Design</td>
+						<td> Game Art<br>(Pixel/Low-Poly) </td>
+						<td> Website Design<br>(I built this site from scratch!) </td>
+					</tr>
+					<tr>
+						<td> Godot/Unity<br>Familiarity </td>
+						<td> Music/Sound/<br> Writing</td>
+						<td> Programming <br>(Python, GDScript, HTML/CSS)</td>
+					</tr>
+				</table>
+
+
+			<h2> My game design philosophy </h2>
+
+				<h3> &#10097; &nbsp; Gameplay is story, story is gameplay </h3>
+
+					<p style = "text-indent: 1em" > The whole of a game's narrative is told with play as well as story - thinking about mechanics and story through each other's lens can do wonders to ensure a game has holistic design values. </p>
+				
+				<h3> &#10097; &nbsp; Invest in believability (beyond fidelity) </h3>
+					
+					<p style = "text-indent: 1em" > Verisimilitude has countless vectors, many of which don't stop at photorealism. I've found that focusing my budget on ways to make my games feel surprising and alive (extra dialogue and other responses to player input, for example) is the best way to make my work shine. </p>
+				
+				<h3> &#10097; &nbsp; Understand players to understand games </h3>
+					
+					<p style = "text-indent: 1em" > Game design is a line of work that benefits from trying to understand the person behind the controller. The best tools to understand player motivation are open eyes and ears to discover peoples' needs, wants, and hopes. </p>
+
+			<h2 id = "contact"> Contact me </h2>
+				
+				<p> The best way to contact me is <a href = "mailto:tayloreruysal@gmail.com">by email</a>, but you can also find me on <a href = "https://bsky.app/profile/instanttrain.bsky.social">Bluesky</a>.</p>
 		</div>
 	</main>
 	
@@ -43,23 +87,6 @@
 		.then(data => {
 			document.getElementById('INJECT-HEADER-HERE').innerHTML = data;
 		});
-
-	let currentSlideIndex = 0;
-	let timeBetweenSlides = 2500;
-	const slides = document.querySelectorAll(".slide");
-
-	function showSlide(index) { // loop correctly
-		if (index >= slides.length) { currentSlideIndex = 0; }
-		else if (index < 0) { currentSlideIndex = slides.length - 1; }
-		else { currentSlideIndex = index; }
-
-		// only grant "active" to the current slide
-		slides.forEach(slide => slide.classList.remove('active'));
-		slides[currentSlideIndex].classList.add('active');
-	}
-
-	// Optional: Auto-play slideshow every X seconds
-	setInterval(() => { showSlide(currentSlideIndex + 1); }, timeBetweenSlides);
 </script>
 
 </html>

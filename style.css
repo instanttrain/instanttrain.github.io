@@ -44,13 +44,17 @@ speed reminder:
 	let's try to avoid it.
 
 overflow: hidden; /* Cut off overflowing elements. Can't scroll to see them.
+
+<details>
+	<summary> Epcot Center </summary>
+	<p> Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events. </p>
+</details>
+
 */
 
 
-/*
-Call this with var(--custom-blue).
-*/
-:root {
+
+:root { /* Call this with var(--the variable's name). */
 	--desktop-spacing: 20%;
 	--tablet-spacing: 10%;
 	--mobile-spacing: 3%;
@@ -77,18 +81,26 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-sans-serif);
 }
 
+h1 { /* For some reason, spacing on h1 specifically seems to be off. */
+	line-height: 1.2em;
+}
+
+blockquote {
+	color: SaddleBrown;
+	background-color: AntiqueWhite;
+	padding: 1em;
+	border-radius: 1em;
+}
+
 header {
 	display: flex; /* place items side-by-side */
 	align-items: center; /* vertically center items */
-
 	background-color: White;
 	box-shadow: var(--desktop-shadow);
-
 	padding-left: var(--desktop-spacing);
 	padding-right: var(--desktop-spacing);
 	padding-top: 1em;
 	padding-bottom: 1em;
-
 	margin-bottom: 1em;
 }
 
@@ -96,14 +108,14 @@ header a img.logo-desktop { height: 3em; width: auto; }
 header a img.logo-mobile { display: none; }
 
 main {
-	flex: 1; /* Push the footer down if the content is short. */
+	flex: 1; /* push the footer down if the content is short */
 	margin-left: var(--desktop-spacing);
 	margin-right: var(--desktop-spacing);
 }
 
 .card {
 	background-color: White;
-	border-radius: 1em; /* Round the corners of the card. */
+	border-radius: 1em; /* round the corners of the card */
 	box-shadow: var(--desktop-shadow);
 	padding-left: var(--card-padding-hor);
 	padding-right: var(--card-padding-hor);
@@ -128,17 +140,22 @@ img {
 	margin-right: auto;
 }
 
-/* Position all slides in the exact same spot (stacked) */
+/* stack all slides on top of one another */
 .slide {
 	position: absolute;
 	opacity: 0;
 	transition: opacity 0.8s ease-in-out;
 }
 
-/* The active slide is visible and sits on top */
+/* make the active slide visible and on top of the pile */
 .slide.active {
 	opacity: 1;
 	z-index: 2;
+}
+
+/* make data tables have centered text. */
+th, td {
+	text-align: center;
 }
 
 /* TABLETS */
@@ -193,6 +210,10 @@ img {
 
 	.card {
 		box-shadow: var(--mobile-shadow);
+	}
+
+	th, td {
+		font-size: 0.7em; /* Ensure tables can fit on mobile screens. */
 	}
 }
 /*
