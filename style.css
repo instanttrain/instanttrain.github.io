@@ -1,319 +1,131 @@
-/* Import the Google Fonts font used for this site. */
+/* import the site's font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Sizing reminder: em is relative to the font size of its parent element. */
-/* rem is relative to the font size of the root <html> element. */
-html {
-	font-family: "PT Serif", serif;
-	font-size: 1.2em;
-	color: Black;
+/*
+em / rem reminder:
+	em is calculated relative to the font-size of its parent element.
+		ex. a parent <div> has a font-size of 16px,
+		2em inside that <div> equals 32px.
+
+		use it for things like button padding or borders that
+		should scale proportionally to its text size.
+	
+	rem is calculated relative to the font-size of the root <html> element.
+		ex. the default font-size of <html> is 16px by default,
+		therefore 2rem is 32px.
+
+margin / padding reminder:
+	margin is the space outside the border that pushes other elements away
+		- outside the element
+		- completely transparant
+		- not clickable
+		- used for things like gaps between blocks or centering boxes
+
+	padding is the space between an element's content and border
+		- inside the element
+		- clickable
+		- background images and colors extend into the padding area
+
+override reminder:
+	CSS has a specificity scoring system used when there's a conflict
+	in style settings.
+		ex: * has the lowest score of (0,0,0)
+		p has a score of (0, 0, 1), so it takes preference
+
+syntax reminder:
+	CSS elements can be combined via a space in HTML,
+	which shows as a period in CSS.
+
+<html> reminder:
+	margin settings do not get passed to <body> automatically
+
+speed reminder:
+	* can sometimes slow pages down.
+	let's try to avoid it.
+
+overflow: hidden; /* Cut off overflowing elements. Can't scroll to see them.
+*/
+
+
+/*
+Call this with var(--custom-blue).
+*/
+:root {
+	--desktop-spacing: 20%;
+	--tablet-spacing: 10%;
+	--mobile-spacing: 3%;
+	--font-serif: "PT Serif", serif;
+	--font-sans-serif: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--card-padding-hor: 1em;
+	--card-padding-ver: 0.1em; /* Padding calculates from the "straight" of a rounded rectangle. This squares it off. */
+	--desktop-shadow: 0.5em 0.5em 0.25em 0 rgba(0, 0, 0, 0.3); /* (offsetX, offsetY, sharpness, spread-radius, color) */
+	--mobile-shadow: 0.25em 0.25em 0.125em 0 rgba(0, 0, 0, 0.3); /* (offsetX, offsetY, sharpness, spread-radius, color) */
 }
 
-body {
-	font-size:1rem;
-	background-color: SlateGray;
-	line-height:1.5;
-	margin: 0; /* Remove the auto-margin around all the page-elements. */
-}
-
-p {
-    line-height:2;
-}
-
-/* BUTTON */
-.returnbutton {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 1em;
-	font-size: 1em;
-}
-
-/* TEXT */
-.subtitle {
-	font-size:.8em;
-	text-indent: 1em;
-	color: Gray;
-}
-
-.quotebubble {
-	font-style: italic;
-	padding: 1em;
-	border-radius: 0.5em;
-	color: SaddleBrown;
-	background-color: AntiqueWhite;
-}
-
-@media print {
-    html{ font-size:.8em; }
-    body{ line-height:1.2; }
-	.subtitle{ font-size:.6em; line-height:1.2; }
-}
-
-h1, h2, h3, h3, h5, h6{
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-    font-weight:bold;
-    color:#0989b2;
-    text-decoration:underline;
-    text-decoration-color:#0989b2;
-    text-decoration-thickness:.1rem;
-}
-
-a:visited {
-    color:#054a61;
-    text-decoration-color:#054a61;
-}
-
-li {
-    margin-top:.5em;
-    margin-bottom:.5em;
-}
-
-blockquote {
-    border-left:.5rem solid Black;
-    padding-left:.5rem;
-}
-
-code {
-    font-family:"Inconsolata",monospace
-}
-
-audio {
-	width: 100%;
-}
-
-/* Extra adjustments for very small screens */
-@media (max-width: 380px) {
-  audio {
-    width: 70%;
-  }
-}
-
-/* END TEXT */
-
-/* Reminder: CSS elements can be combined via a space in HTML, which shows as a period in CSS. */
-.section {
-	padding-left:calc((100% - 800px)/2 + 1rem);
-	padding-right:calc((100% - 800px)/2 + 1rem);
-}
-
-@media screen and (max-width: 800px) {
-    .section {
-		padding-right:1rem;
-		padding-left:1rem;
-	}
-}
-
-/* HEADER */
-.section.header {
+html, body {
+	font-size: 1.1em;
+	line-height: 1.5em;
 	display: flex;
-	overflow: hidden;
-	flex-direction: row;
+	flex-direction: column;
+	height: 100%;
+	margin: 0;
+	background-color: SlateGray;
+	font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-sans-serif);
+}
+
+header {
+	display: flex; /* place items side-by-side */
+	align-items: center; /* vertically center items */
+
 	background-color: White;
-	box-shadow: 0.5em 0.5em 0.5em rgb(0 0 0 / 20%);
-	color: Black;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	box-shadow: var(--desktop-shadow);
+
+	padding-left: var(--desktop-spacing);
+	padding-right: var(--desktop-spacing);
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	margin-bottom: 1em;
 }
 
-/* Align the header vertically centered. */
-.section.header> * {
-    display:flex;
-	align-items:center;
+header a img.logo-desktop { height: 3em; width: auto; }
+header a img.logo-mobile { display: none; }
+
+main {
+	flex: 1; /* Push the footer down if the content is short. */
+	margin-left: var(--desktop-spacing);
+	margin-right: var(--desktop-spacing);
 }
 
-.logo-desktop {
-	height: 3em;
-}
-
-.logo-mobile {
-	display: none;
-	height: 3em;
-}
-
-.section.header .menu-desktop {
-    flex-grow:0;
-	/* Center the links on the header horizontally. */
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/* Spacing commands will transform the space between each link. */
-.section.header .menu-desktop a {
-    color:Black;
-	font-family: Arial, Helvetica, sans-serif;
-	text-decoration:none;
-	margin-right: 0.5em;
-	margin-left: 0.5em;
-}
-
-.section.header .menu-desktop a:hover {
-	color: darkgray;
-}
-
-@media screen and (max-width: 376px) {
-	.logo-desktop {
-		display: none;
-	}
-
-	.logo-mobile {
-		display: block;
-		max-width: 3em;
-	}
-
-	.section.header .menu-desktop a {
-		font-size: 0.8em;
-	}
-
-	.section.header .menu-desktop a {
-		margin-right: 0.25em;
-		margin-left: 0.25em;
-	}
-}
-/* END HEADER */
-
-/* CARD */
-.section.card {
-	border-radius: 1em;
+.card {
 	background-color: White;
-	padding: 0.5em;
-	margin-top: 1em;
-	box-shadow: 0.5em 0.5em 0.5em rgb(0 0 0 / 20%);
+	border-radius: 1em; /* Round the corners of the card. */
+	box-shadow: var(--desktop-shadow);
+	padding-left: var(--card-padding-hor);
+	padding-right: var(--card-padding-hor);
+	padding-top: var(--card-padding-ver);
+	padding-bottom: var(--card-padding-ver);
 }
 
-/* This is for text INSIDE the cards. */
-.section.content .section.card .withincard {
-	margin-left: 0.5em;
-	margin-right: 0.5em;
-}
-/* END CARD */
-
-.section.footer {
+footer {
 	background-color: #2C3741;
 	color: White;
-	text-align:center;
-	padding-top:1rem;
-	padding-bottom:1rem;
-	margin-top:1rem;
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-top: 1em;
 }
 
-@media only print {
-	.section.header {
-		display:none;
-	}
-
-	.section.footer {
-		display:none;
-	}
-}
-
-/* DATA TABLES */
-table {
-	width:100%;
-	border-spacing:0;
-	border:3px solid Black;
-	border-radius:.5rem;
-}
-
-tr:nth-child(even) {
-	background-color:Black;
-	color:White;
-}
-
-th,td {
-	padding:.25rem .5rem;
-}
-
-th:empty {
-	display:none;
-}
-/* END TABLES */
-
-/* This is for images. */
 img {
 	display: block;
 	max-width: 100%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-/* PROJECT GALLERY */
-.responsive {
-	box-sizing: border-box;
-	padding: 0.25em;
-	float: left;
-	width: 50%;
-}
-
-/* Wide screens show three images in a row, medium shoes two, small shows one. */
-@media only screen and (max-width: 700px) {
-	.responsive{
-		width: 50%;
-		margin: 0.25em 0;
-	}
-}
-
-@media only screen and (max-width: 700px) {
-	.responsive{
-		width: 100%;
-	}
-}
-
-.gallery-entry {
-	box-shadow: 0.25em 0.25em 0.25em rgb(0 0 0 / 20%);
-	border: solid White;
-}
-
-.gallery-container {
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-}
-
-.gallery-container img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	display: block;
-	transition: transform 0.4s ease;
-}
-
-.gallery-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	/* Semi-transparant dark background. */
-	background-color: rgba(0, 0, 0, 0.6);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	color: White;
-
-	/* Start hidden, transition smoothly */
-	opacity: 0;
-	transition: opacity 0.2s ease-in-out;
-}
-
-.gallery-container:hover .gallery-overlay {
-	/* Fade the overlay in while hovering over the container */
-	opacity: 1;
-}
-/* END PROJECT GALLERY */
-
-/* IMAGE SLIDESHOW */
-.slideshow-container {
-	position: relative;
-	max-height: 350px; /* Required to have a dimension in at least one axis. */
-	aspect-ratio: 16/9;
-	margin: auto;
-	overflow: hidden;
 }
 
 /* Position all slides in the exact same spot (stacked) */
@@ -329,93 +141,67 @@ img {
 	z-index: 2;
 }
 
-.slide img {
-	object-fit: cover;
-}
+/* TABLETS */
+@media (max-width: 768px) {
+	header {
+		padding-left: var(--tablet-spacing);
+	}
 
-/* Styled external buttons */
-.slideshow-button {
-	cursor: pointer;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 10%; /* Covers the left/right edges of the image */
-	background-color: transparent;
-	border: none;
-	z-index: 10;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font-size: 3em;
-	font-weight: bold;
-	opacity: 0.5; /* Semi-transparent arrow text */
-	transition: background-color 0.3s ease, opacity 0.3s ease;
-}
+	.header-links nav a {
+		font-size: 1rem;
+		padding: .75em;
+	}
 
-.slideshow-button:hover {
-	background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
-	opacity: 1;
-}
+	header a img.logo-desktop { /* This is the desktop header logo. */
+		height: 2.5em;
+		width: auto;
+	}
 
-.prev {
-	left: 0;
-}
-
-.next {
-	right: 0;
-}
-/* END IMAGE SLIDESHOW */
-
-/* ART LIGHTBOX */
-.lightbox {
-	display: none; /* Hidden by default */
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
-	justify-content: center;
-	align-items: center;
-}
-
-/* Focused Image */
-.lightbox img {
-	max-width: 90%;
-	max-height: 90%;
-	border-radius: 4px;
-}
-
-.liquid-gallery {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr); /* Forces exactly two equal columns */
-	gap: 1em;
-	width: 100%;
-}
-
-/* Switches to 1 column on screens smaller than 600px (like smartphones) */
-@media (max-width: 600px) {
-	.liquid-gallery {
-		grid-template-columns: 1fr;
+	main {
+		margin-left: var(--tablet-spacing);
+		margin-right: var(--tablet-spacing);
 	}
 }
 
-.liquid-gallery img {
-	width: 100%;
-	height: auto;
-	display: block;
-	box-shadow: 0.25em 0.25em 0.25em rgb(0 0 0 / 20%);
-	cursor: pointer; /* Changes mouse pointer to a hand */
-	/* This is defined before the hover to ensure that the border's appearance doesn't displace nearby images. */
-	border: 0.25rem solid transparent; /* Invisible border prevents layout jump */
-	transition: border-color 0.2s ease, transform 0.2s ease; /* Smooth transition effect */
-}
+/* MOBILE */
+@media (max-width: 375px) {
+	header {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		padding-left: var(--mobile-spacing);
+		box-shadow: var(--mobile-shadow);
+	}
 
-.liquid-gallery img:hover {
-	border-color: #ffffff; /* Changes the border to white (or use an accent color like #3498db) */
-	transform: scale(1.02); /* Adds a subtle zoom effect */
-}
+	header a img.logo-desktop { /* This is the desktop header logo. */
+		display: none;
+	}
 
-/* END ART LIGHTBOX */
+	header a img.logo-mobile { /* This is the desktop header logo. */
+		height: 3em;
+		display: inline;
+	}
+
+	footer {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	main {
+		margin-left: var(--mobile-spacing);
+		margin-right: var(--mobile-spacing);
+	}
+
+	.card {
+		box-shadow: var(--mobile-shadow);
+	}
+}
+/*
+Things I've learned:
+- * vs html
+- Headers and footers have built in tags, no need to create custom div classes.
+- Margins are not auto-inheretid the same way font-family or color is.
+- * however, is too costly for a speedy website.
+- because the browser evaluates it for every element on the page.
+- Using CSS custom properties as native variables
+- Keep your images in evenly-divided aspect ratios
+*/
