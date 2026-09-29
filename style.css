@@ -193,6 +193,58 @@ th, td {
 	text-align: center;
 }
 
+/* Project Gallery */
+.responsive {
+	box-sizing: border-box;
+	padding: 0.25em;
+	float: left;
+	width: 50%;
+}
+
+.gallery-entry {
+	box-shadow: 0.25em 0.25em 0.25em rgb(0 0 0 / 20%);
+	border: solid White;
+}
+
+.gallery-container {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.gallery-container img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s ease;
+}
+
+.gallery-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Semi-transparant dark background. */
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	color: White;
+
+	/* Start hidden, transition smoothly */
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.gallery-container:hover .gallery-overlay {
+	/* Fade the overlay in while hovering over the container */
+	opacity: 1;
+}
+
+/* Lightbox for Art section */
 .lightbox {
 	display: none; /* Hidden by default */
 	position: fixed;
@@ -257,6 +309,10 @@ th, td {
 		font-size: 1.0em;
 		width: 4em; /* this is the width that all the buttons take up! */
 		padding: 0.6em 0.2em; /* Slightly make the buttons smaller. */
+	}
+
+	.responsive{
+		margin: 0.25em 0;
 	}
 }
 
@@ -329,6 +385,10 @@ th, td {
 
 	.liquid-gallery {
 		grid-template-columns: 1fr; /* Switches to 1 column on screens smaller than 600px (like smartphones) */
+	}
+
+	.responsive{
+		width: 100%;
 	}
 }
 /*
