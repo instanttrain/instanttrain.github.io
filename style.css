@@ -203,7 +203,7 @@ th, td {
 }
 
 /* TABLETS */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 	main {
 		margin-left: var(--tablet-spacing);
 		margin-right: var(--tablet-spacing);
@@ -211,7 +211,7 @@ th, td {
 }
 
 /* MOBILE */
-@media (max-width: 375px) {
+@media (max-width: 400px) {
 	footer {
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
