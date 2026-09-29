@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
+	<meta name = "author" content = "Taylor Eruysal">
+
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/files/icons-logos/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/files/icons-logos/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/files/icons-logos/favicon-16x16.png">
+	<link rel="manifest" href="/files/icons-logos/site.webmanifest">
+
+	<!-- style and title -->
+	<link rel = "stylesheet" href = "/style.css">
+	<title> Forest Village </title>
+</head>
+
+<body>
+	<div id="INJECT-HEADER-HERE"> <!-- Inject the header here via Javascript. --> </div>
+
+	<main>
+		<div class = "card">
+			<h2>Forest Village (Unreal Engine 4)</h2>
+
+			<img src = "/files/projects/forestvillage-header.jpg" alt = "A 3D stylized forest village.">
+			<p> <i>Forest Village</i> is an environmental showcase using handmade, stylized assets in <a href = "https://www.unrealengine.com/">Unreal Engine 4</a>. </p>
+
+			<p> Custom environments are always a pleasure to make. It scratches the same itch as a shoebox diorama for me - placing detail objects like blades of grass is part of the fun. I could never leave that sort of thing to an algorithm, because I enjoy doing it by hand. Scripting the camera was also its own challenge; reminiscent of coding rail-shooter behavior after a while. </p>
+
+			<p> Unreal offers a pretty substantial lighting package right out of the box. I was most impressed by its texture blending features. Very nice for getting the most out of the transitions from things like stone-to-grass. </p>
+
+			<iframe
+				src="https://www.youtube.com/embed/5__VtBtL-UE"
+				title = "Forest Village"
+				style = "display: flex; justify-content: center; aspect-ratio: 16/9; width: 100%">
+			</iframe>
+
+			<a href = "/projects" style = "color: Black; text-align: center;"> <h3> <u> Back to Projects </u> </h3> </a>
+		</div>
+	</main>
+	
+	<footer>
+		<p> &copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script> </p>
+	</footer>
+</body>
+
+<script>
+	fetch('/header.html')
+		.then(response => response.text())
+		.then(data => {
+			document.getElementById('INJECT-HEADER-HERE').innerHTML = data;
+		});
+</script>
+
+</html>

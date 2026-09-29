@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv = "X-UA-Compatible" content = "IE=Edge">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	<meta name = "description" content = "Taylor Eruysal: Game Designer, Artist, Web Creator">
+	<meta name = "author" content = "Taylor Eruysal">
+
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/files/icons-logos/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/files/icons-logos/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/files/icons-logos/favicon-16x16.png">
+	<link rel="manifest" href="/files/icons-logos/site.webmanifest">
+
+	<!-- style and title -->
+	<link rel = "stylesheet" href = "/style.css">
+	<title> RPI Visualizations </title>
+</head>
+
+<body>
+	<div id="INJECT-HEADER-HERE"> <!-- Inject the header here via Javascript. --> </div>
+
+	<main>
+		<div class = "card">
+			<h2>RPI Visualizations</h2>
+
+			<div class = "slideshow-container">
+				<div class = "slide active">
+					<img src = "/files/projects/rpi-vis-1.jpg">
+				</div>
+
+				<div class = "slide">
+					<img src = "/files/projects/rpi-vis-2.jpg">
+				</div>
+
+				<button class = "slideshow-button prev" onclick = "changeSlide(-1)">&#10094;</button>
+				<button class = "slideshow-button next" onclick = "changeSlide(1)">&#10095;</button>
+			</div>
+
+			<p> I was hired in 2019 by <a href = "https://scholar.google.com/citations?user=RWOKBb8AAAAJ&hl=en">Dr. Runye Zha</a> to create 3D representations of cellular interactions to be used in presentations / business proposals for Rensselaer Polytechnic Institute's <a href = "https://cbe.rpi.edu/">Department of Chemical and Biological Engineering</a>.</p>
+
+			<p> Making renders that were both appealing yet informative was a fun challenge. I ended up putting a lot of thought into things like color choices to try to contextualize the abstract concept of it all. I'd love to tackle this kind of work again someday, now that I have more sophisticated render engines available. </p>
+
+			<a href = "/projects" style = "color: Black; text-align: center;"> <h3> <u> Back to Projects </u> </h3> </a>
+		</div>
+	</main>
+	
+	<footer>
+		<p> &copy; Taylor Eruysal <script type = "text/javascript"> document.write((new Date()).getFullYear()); </script> </p>
+	</footer>
+</body>
+
+<script>
+	fetch('/header.html')
+		.then(response => response.text())
+		.then(data => {
+			document.getElementById('INJECT-HEADER-HERE').innerHTML = data;
+		});
+</script>
+
+</html>
