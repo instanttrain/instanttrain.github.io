@@ -134,7 +134,7 @@ header a img { /* This is the logo image. */
 	font-size: 1.2em;
 	font-weight: bold;
 	text-decoration: none;
-	width: 5em; /* this is the width that all the buttons take up! */
+	width: 4.5em; /* this is the width that all the buttons take up! */
 	padding: 0.7em 0.1em;
 }
 
@@ -249,13 +249,14 @@ th, td {
 	}
 
 	header a img { /* This is the logo image. */
-		height: 3em;
+		height: 2.5em;
 		width: auto;
 	}
 
 	.header-item {
+		font-size: 1.0em;
 		width: 4em; /* this is the width that all the buttons take up! */
-		padding: 0.6em 0.1em; /* Slightly make the buttons smaller. */
+		padding: 0.6em 0.2em; /* Slightly make the buttons smaller. */
 	}
 }
 
@@ -319,7 +320,7 @@ th, td {
 
 	/* Set the height of the items when checked */
 	#headerbutton:checked ~ .header-items {
-		max-height: 12rem;
+		max-height: 16rem;
 	}
 
 	#headerbutton:checked ~ .logo label::before {
