@@ -91,31 +91,21 @@ blockquote {
 	border-radius: 1em;
 }
 
-/* ######################################################################################################################## */
-
 header {
+	display:flex;
 	box-shadow: var(--desktop-shadow);
 	margin-bottom: 1em;
-
-	width: 100%;
-	height: fit-content;
-	box-sizing: border-box;
-	background: darkslategray;
-	display:flex;
-	align-items: center;
+	background: White;
 	justify-content: space-between;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: var(--desktop-spacing);
+	padding-right: var(--desktop-spacing);
 }
 
-.logo {
-	display: flex;
-	width: fit-content;
-	color: White;
-	font-weight: bold;
-	font-size: 32px;
-	padding: 15px;
-	box-sizing: border-box;
-	align-items: center;
-	justify-content: space-between;
+header a img { /* This is the logo image. */
+	height: 3em;
+	width: auto;
 }
 
 #headerbutton {
@@ -123,7 +113,7 @@ header {
 }
 
 .logo label {
-	display: none;
+	display: none; /* do not show hamburger menu unless in mobile */
 }
 
 .header-items {
@@ -134,22 +124,22 @@ header {
 }
 
 .header-item {
-	width: 100px;
-	padding: 10px 18px;
-	box-sizing: border-box;
 	display: flex;
+	box-sizing: border-box;
 	align-items: center;
 	justify-content: center;
-	border-radius: 5mm;
-	font-size: 16px;
-	color: white;
+
+	color: Black;
+	font-family: var(--font-sans-serif);
+	font-weight: bold;
+	text-decoration: none;
+	width: 6em; /* this is the width that all the buttons take up! */
+	padding: 0.7em 0.1em;
 }
 
 .header-item:hover {
-	background: gray
+	background: rgba(0, 0, 0, 0.1); /* Very slight darkening on selected menu. */
 }
-
-/* ######################################################################################################################## */
 
 main {
 	flex: 1; /* push the footer down if the content is short */
@@ -208,6 +198,16 @@ th, td {
 		margin-left: var(--tablet-spacing);
 		margin-right: var(--tablet-spacing);
 	}
+
+	header {
+		padding-left: var(--tablet-spacing);
+		padding-right: var(--tablet-spacing);
+	}
+
+	.header-item {
+		width: 5em; /* this is the width that all the buttons take up! */
+		padding: 0.6em 0.1em; /* Slightly make the buttons smaller. */
+	}
 }
 
 /* MOBILE */
@@ -230,59 +230,52 @@ th, td {
 		font-size: 0.7em; /* Ensure tables can fit on mobile screens. */
 	}
 
-	/* ######################################################################################################################## */
-
 	header {
 		flex-direction: column; /* This puts the logo at the top center and the clickables below, evenly spaced. */
+		box-shadow: var(--mobile-shadow); /* Slightly lessen the shadow. */
+		padding-left: var(--mobile-spacing);
+		padding-right: var(--mobile-spacing);
 	}
 
-	header .logo {
-		width: 100%;
+	header a img{
+		height: 2.5em; /* Make the logo slightly smaller. */
+		width: auto;
 	}
 
 	header .logo label {
 		display: block;
-		cursor: pointer;
 		position: relative;
-		width: 30px;
-		height: 30px;
 	}
 
 	header .logo label::before {
-		position: absolute;
-		content: "menu";
+		content: "menu"; /* This is a font character of the hamburger icon. */
 		font-family: "Material Icons";
-		top: 0;
-		left: 0;
-		font-size: 30px;
+		font-size: 2em;
+		cursor: pointer;
 	}
 
 	header .header-items {
 		width: 100%;
 		flex-direction: column;
-		max-height: 0;
+		max-height: 0; /* This keeps the "accordion" in at first. */
 		overflow: hidden;
-		transition: 0.25s;
+		transition: 0.3s;
 	}
 
 	header .header-item {
 		width: 100%;
-		padding: 15px;
-		border-radius: 0;
-		border-top: 0.5mm solid Black;
+		padding: 0.5em;
+		border-top: 0.15em solid Gainsboro;
 	}
 
 	/* Set the height of the items when checked */
 	#headerbutton:checked ~ .header-items {
-		max-height: 500px;
+		max-height: 12rem;
 	}
 
 	#headerbutton:checked ~ .logo label::before {
 		content: "close";
 	}
-
-	/* ######################################################################################################################## */
-
 }
 /*
 Things I've learned:
