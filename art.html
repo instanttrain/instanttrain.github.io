@@ -24,7 +24,47 @@
 
 	<main>
 		<div class = "card">
-			<p> TODO: Lightbox here </p>
+			<p style = "text-align: center;"> (Click the images to enlarge.) </p>
+
+			<h2 style = "line-height:1;">3D Art</h2>
+
+			<div class = "liquid-gallery">
+				<img src = "/files/art/mountains.jpg" alt = "Mountains">
+				<img src = "/files/art/factory.jpg" alt = "Factory">
+				<img src = "/files/art/spaceship-eight.jpg" alt = "Spaceship Eight">
+				<img src = "/files/art/bedroom.jpg" alt = "Bedroom">
+				<img src = "/files/art/harbor.jpg" alt = "Harbor Assets">
+				<img src = "/files/art/kintsu.jpg" alt = "Kintsukuroi">
+				<img src = "/files/art/hallway.jpg" alt = "Hallway">
+				<img src = "/files/art/turret.jpg" alt = "Turret">
+			</div>
+
+			<div style = "clear: both;"></div>
+			<h2>2D Art</h2>
+
+			<div class = "liquid-gallery">
+				<img src = "/files/art/blacksmith.jpg" alt = "Blacksmith">
+				<img src = "/files/art/spacearmor.jpg" alt = "Space Armor">
+				<img src = "/files/art/flute.jpg" alt = "flute">
+				<img src = "/files/art/birds.jpg" alt = "Birds">
+				<img src = "/files/art/hallway.jpg" alt = "Hallway">
+				<img src = "/files/art/horse.jpg" alt = "Horse">
+			</div>
+
+			<div style = "clear: both;"></div>
+			<h2>Fan Art</h2>
+
+			<div class = "liquid-gallery">
+				<img src = "/files/art/mina.jpg" alt = "Mina the Hollower (fanart)">
+				<img src = "/files/art/mario-redraw.jpg" alt = "Mario (Redraw)">
+			</div>
+			
+			<!-- Lightbox Overlay -->
+			<div id="lightbox" class="lightbox">
+				<img id="lightbox-img" src="" alt="Enlarged view">
+			</div>
+
+			<br> <!-- Line break. -->
 		</div>
 	</main>
 	
@@ -39,6 +79,25 @@
 		.then(data => {
 			document.getElementById('INJECT-HEADER-HERE').innerHTML = data;
 		});
+	
+	const galleryImages = document.querySelectorAll('.liquid-gallery img');
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImg = document.getElementById('lightbox-img');
+
+	// Open lightbox when an image is clicked
+	galleryImages.forEach(img => {
+		img.addEventListener('click', () => {
+			lightbox.style.display = 'flex';
+			lightboxImg.src = img.src;
+		});
+	});
+
+	// Close lightbox when clicking anywhere outside the image
+	lightbox.addEventListener('click', (e) => {
+		if (e.target !== lightboxImg) {
+			lightbox.style.display = 'none';
+		}
+	});
 </script>
 
 </html>
