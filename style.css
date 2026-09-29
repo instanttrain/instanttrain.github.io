@@ -96,9 +96,7 @@ blockquote {
 header {
 	box-shadow: var(--desktop-shadow);
 	margin-bottom: 1em;
-}
 
-.menu {
 	width: 100%;
 	height: fit-content;
 	box-sizing: border-box;
@@ -120,7 +118,7 @@ header {
 	justify-content: space-between;
 }
 
-#menu {
+#headerbutton {
 	display: none; /* hide checkbox */
 }
 
@@ -128,14 +126,14 @@ header {
 	display: none;
 }
 
-.items {
+.header-items {
 	width: fit-content;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.item {
+.header-item {
 	width: 100px;
 	padding: 10px 18px;
 	box-sizing: border-box;
@@ -147,7 +145,7 @@ header {
 	color: white;
 }
 
-.item:hover {
+.header-item:hover {
 	background: gray
 }
 
@@ -234,15 +232,15 @@ th, td {
 
 	/* ######################################################################################################################## */
 
-	.menu {
+	header {
 		flex-direction: column; /* This puts the logo at the top center and the clickables below, evenly spaced. */
 	}
 
-	.menu .logo {
+	header .logo {
 		width: 100%;
 	}
 
-	.menu .logo label {
+	header .logo label {
 		display: block;
 		cursor: pointer;
 		position: relative;
@@ -250,7 +248,7 @@ th, td {
 		height: 30px;
 	}
 
-	.menu .logo label::before {
+	header .logo label::before {
 		position: absolute;
 		content: "menu";
 		font-family: "Material Icons";
@@ -259,7 +257,7 @@ th, td {
 		font-size: 30px;
 	}
 
-	.menu .items {
+	header .header-items {
 		width: 100%;
 		flex-direction: column;
 		max-height: 0;
@@ -267,7 +265,7 @@ th, td {
 		transition: 0.25s;
 	}
 
-	.menu .item {
+	header .header-item {
 		width: 100%;
 		padding: 15px;
 		border-radius: 0;
@@ -275,11 +273,11 @@ th, td {
 	}
 
 	/* Set the height of the items when checked */
-	#menu:checked ~ .items {
+	#headerbutton:checked ~ .header-items {
 		max-height: 500px;
 	}
 
-	#menu:checked ~ .logo label::before {
+	#headerbutton:checked ~ .logo label::before {
 		content: "close";
 	}
 

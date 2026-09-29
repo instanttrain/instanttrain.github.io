@@ -66,7 +66,6 @@
 		});
 
 	let currentSlideIndex = 0;
-	let timeBetweenSlides = 2500;
 	const slides = document.querySelectorAll(".slide");
 
 	function showSlide(index) { // loop correctly
@@ -79,8 +78,7 @@
 		slides[currentSlideIndex].classList.add('active');
 	}
 
-	// Optional: Auto-play slideshow every X seconds
-	setInterval(() => { showSlide(currentSlideIndex + 1); }, timeBetweenSlides);
+	setInterval(() => { showSlide(currentSlideIndex + 1); }, 2500); //Auto-play slideshow every X seconds
 </script>
 
 </html>
