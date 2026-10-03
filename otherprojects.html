@@ -16,31 +16,36 @@
 
 	<!-- style and title -->
 	<link rel = "stylesheet" href = "/style.css">
-	<title> Forest Village </title>
+	<title> Other Projects </title>
 </head>
+
+<style>
+
+</style>
 
 <body>
 	<div id="INJECT-HEADER-HERE"> <!-- Inject the header here via Javascript. --> </div>
 
 	<main>
 		<div class = "card">
-			<h2>Forest Village (Unreal Engine 4)</h2>
+			<h2>Image Restoration</h2>
 
-			<img src = "/files/projects/forestvillage-header.jpg" alt = "A 3D stylized forest village.">
-			<p> <i>Forest Village</i> is an environmental showcase using handmade, stylized assets in <a href = "https://www.unrealengine.com/">Unreal Engine 4</a>. </p>
+			<p> Occasionally, I colorize and restore old pictures. It's surprisingly theraputic. </p>
 
-			<p> Custom environments are always a pleasure to make. It scratches the same itch as a shoebox diorama for me - placing detail objects like blades of grass is part of the fun. I could never leave that sort of thing to an algorithm, because I enjoy doing it by hand. Scripting the camera was also its own challenge; reminiscent of coding rail-shooter behavior after a while. </p>
+			<div class = "liquid-gallery">
+				<img src = "/files/projects/restore-dbz-old.jpg" alt = "RPI Visualization 1">
+				<img src = "/files/projects/restore-dbz-new.jpg" alt = "RPI Visualization 2">
+			</div>
 
-			<p> Unreal offers a pretty substantial lighting package right out of the box. I was most impressed by its texture blending features. Very nice for getting the most out of the transitions from things like stone-to-grass. </p>
+			<div class = "liquid-gallery">
+				<img src = "/files/projects/restore-cind-old.jpg" alt = "RPI Visualization 1">
+				<img src = "/files/projects/restore-cind-new.jpg" alt = "RPI Visualization 2">
+			</div>
 
-			<iframe
-				src="https://www.youtube.com/embed/5__VtBtL-UE"
-				title = "Forest Village"
-				style = "display: flex; justify-content: center; aspect-ratio: 16/9; width: 100%">
-			</iframe>
-
-			<a href = "/projects" style = "color: Black; text-align: center;"> <h3> <u> Back to Projects </u> </h3> </a>
-		</div>
+			<!-- Lightbox Overlay -->
+			<div id="lightbox" class="lightbox">
+				<img id="lightbox-img" src="" alt="Enlarged view">
+			</div>
 	</main>
 	
 	<footer>
@@ -54,6 +59,25 @@
 		.then(data => {
 			document.getElementById('INJECT-HEADER-HERE').innerHTML = data;
 		});
+	
+	const galleryImages = document.querySelectorAll('.liquid-gallery img');
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImg = document.getElementById('lightbox-img');
+
+	// Open lightbox when an image is clicked
+	galleryImages.forEach(img => {
+		img.addEventListener('click', () => {
+			lightbox.style.display = 'flex';
+			lightboxImg.src = img.src;
+		});
+	});
+
+	// Close lightbox when clicking anywhere outside the image
+	lightbox.addEventListener('click', (e) => {
+		if (e.target !== lightboxImg) {
+			lightbox.style.display = 'none';
+		}
+	});
 </script>
 
 <noscript> Please enable JavaScript to access the full functionality of this website! </noscript>

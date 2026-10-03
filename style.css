@@ -175,19 +175,6 @@ img {
 	margin-right: auto;
 }
 
-/* stack all slides on top of one another */
-.slide {
-	position: absolute;
-	opacity: 0;
-	transition: opacity 0.8s ease-in-out;
-}
-
-/* make the active slide visible and on top of the pile */
-.slide.active {
-	opacity: 1;
-	z-index: 2;
-}
-
 /* make data tables have centered text. */
 th, td {
 	text-align: center;

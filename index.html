@@ -19,6 +19,21 @@
 	<title> Welcome! </title>
 </head>
 
+<style>
+	/* stack all slides on top of one another */
+	.slide {
+		position: absolute;
+		opacity: 0;
+		transition: opacity 0.8s ease-in-out;
+	}
+
+	/* make the active slide visible and on top of the pile */
+	.slide.active {
+		opacity: 1;
+		z-index: 2;
+	}
+</style>
+
 <body>
 	<div id="INJECT-HEADER-HERE"> <!-- Inject the header here via Javascript. --> </div>
 
@@ -80,5 +95,7 @@
 
 	setInterval(() => { showSlide(currentSlideIndex + 1); }, 2500); //Auto-play slideshow every X seconds
 </script>
+
+<noscript> Please enable JavaScript to access the full functionality of this website! </noscript>
 
 </html>
